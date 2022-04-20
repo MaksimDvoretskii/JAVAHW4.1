@@ -34,34 +34,36 @@ class BonusServiceTest {
         // производим проверку (сравниваем ожидаемый и фактический):
         assertEquals(expected, actual);
     }
-        @org.junit.jupiter.api.Test
-        void shouldCalculateForUnregisteredAndOverLimit() {
-            BonusService service = new BonusService();
 
-            // подготавливаем данные:
-            long amount = 1000_000_60;
-            boolean registered = false;
-            long expected = 500;
+    @org.junit.jupiter.api.Test
+    void shouldCalculateForUnregisteredAndOverLimit() {
+        BonusService service = new BonusService();
 
-            // вызываем целевой метод:
-            long actual = service.calculate(amount, registered);
+        // подготавливаем данные:
+        long amount = 1000_000_60;
+        boolean registered = false;
+        long expected = 500;
 
-            // производим проверку (сравниваем ожидаемый и фактический):
-            assertEquals(expected, actual);
+        // вызываем целевой метод:
+        long actual = service.calculate(amount, registered);
+
+        // производим проверку (сравниваем ожидаемый и фактический):
+        assertEquals(expected, actual);
     }
-            @org.junit.jupiter.api.Test
-            void shouldCalculateForUnregisteredAndUnderLimit() {
-                BonusService service = new BonusService();
 
-                // подготавливаем данные:
-                long amount = 1000_60;
-                boolean registered = false;
-                long expected = 10;
+    @org.junit.jupiter.api.Test
+    void shouldCalculateForUnregisteredAndUnderLimit() {
+        BonusService service = new BonusService();
 
-                // вызываем целевой метод:
-                long actual = service.calculate(amount, registered);
+        // подготавливаем данные:
+        long amount = 1000_60;
+        boolean registered = false;
+        long expected = 10;
 
-                // производим проверку (сравниваем ожидаемый и фактический):
-                assertEquals(expected, actual);
+        // вызываем целевой метод:
+        long actual = service.calculate(amount, registered);
+
+        // производим проверку (сравниваем ожидаемый и фактический):
+        assertEquals(expected, actual);
     }
 }
